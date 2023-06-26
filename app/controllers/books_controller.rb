@@ -12,6 +12,7 @@ class BooksController < ApplicationController
   end
 
   def index
+    @book_images = Book.all
   end
 
   def show
