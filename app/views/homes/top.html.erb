@@ -1,6 +1,25 @@
-<h1>welcome to Bookers !!</h1>
-<p>In Bookers</p>
-<p>you can share and exchange your opinions , inpressions , and emotions<br>
-about various books!</P>
-<%= link_to 'Log in', , class: "btn btn-seccondary" >
-<%= link_to 'Sign up', , class: "btn btn-seccondary" >
+<div class = "d-flex align-items-center justify-content-center">
+
+ <div class = "container p-3">
+  <h1>welcome to <i class="fa-solid fa-book"></i>Bookers !!</h1>
+  <p>In <i class="fa-solid fa-book"></i>Bookers</p>
+  <p>you can share and exchange your opinions , inpressions , and emotions<br>
+  about various books!</p>
+
+  <div class = "row justify-content-center p-2">
+   <div class = "d-grid gap-2 col-6 mx-auto">
+  <button type="button" class="btn btn-info btn-block">
+  <%= link_to 'Log in', new_user_session_path %>
+  </button>
+  </div>
+  </div>
+
+    <div class = "row justify-content-center p-2">
+   <div class = "d-grid gap-2 col-6 mx-auto">
+  <button type="button" class="btn btn-success btn-block">
+  <%= link_to 'Sign up', new_user_registration_path %>
+  </button>
+  </div>
+  </div>
+ </div>
+</div>
