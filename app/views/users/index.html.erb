@@ -1,8 +1,42 @@
-<h1>Index</h1>
+<div class="container">
+  <div class="row">
+  <div class="col-lg-4">
+  <h2>User info</h2>
+   <%= image_tag current_user.get_profile_image(100,100) %>
+   <p>name</p>
+   <p><%= current_user.name %></p>
+   <p>introduction</p>
+   <p><%= current_user.introduction %></p>
+   <div>
+  <%= link_to 'edit', edit_user_path(current_user.id) %>
+  </div>
 
+  <h2>New book</h2>
+  <%= form_with model: Book.new do |f| %>
+  <p>Title</p>
+  <div class>
+   <%= f.text_field :title %>
+   </div>
+  <p>Opinion</p>
+   <div>
+   <%= f.text_area :body, size: "20" %>
+  </div>
+  <div>
+  <%= f.submit 'Create Book', class: "btn btn-info" %>
+  </div>
+   <% end %>
+  </div>
+  <h2>Books</h2>
+<div class = "row">
+  <div class="col-lg-8">
+<table class="table table-striped">
 <% @users.each do |user| %>
-<p>image:<%= image_tag user.get_profile_image(100,100) %></p>
-<p>name:<%= user.name %></p>
-<p>Introduction:<%= user.introduction %></p>
-
+<%= link_to user_path(user.id) do %>
+<%= image_tag user.get_profile_image(100,100) %>
+<%= user.name %>
 <% end %>
+<%= user.introduction %>
+<% end %>
+</table>
+</div>
+</div>
