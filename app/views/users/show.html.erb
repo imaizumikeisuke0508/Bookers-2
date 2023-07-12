@@ -2,11 +2,11 @@
  <div class = "row">
   <div class="col-lg-8">
 <table class="table table-striped">
-   <%= image_tag @book.user.get_profile_image(100,100) %>
+   <%= image_tag @user.get_profile_image(100,100) %>
    <p>name</p>
-   <p><%= @book.user.name %></p>
+   <p><%= @user.name %></p>
    <p>introduction</p>
-   <p><%= @book.user.introduction %></p>
+   <p><%= @user.introduction %></p>
    <div>
   <%= link_to 'edit', edit_user_path(current_user.id) %>
   </div>
@@ -34,7 +34,7 @@
 <div class = "row">
   <div class="col-lg-8">
 <table class="table table-striped">
-  
+
 <% @books.each do |book| %>
   <%= link_to book_path(book.id) do %>
   <%= image_tag book.user.get_profile_image(100,100) %>
