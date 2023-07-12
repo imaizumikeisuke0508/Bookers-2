@@ -48,6 +48,6 @@
 </div>
 
 <% if @book.user == current_user %>
- <%= link_to "削除", book_path(@book), method: :delete, "data-confirm" => "本当に削除しますか？"%>
+ <%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？"%>
  <%= link_to "edit", edit_book_path(@book.id) %>
 <% end %>
