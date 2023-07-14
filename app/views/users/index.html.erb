@@ -2,16 +2,13 @@
   <div class="row">
 
   <div class="col-lg-4">
-
   <%= render 'currentuser' %>
   <%= render 'books/create' %>
-
   </div>
 
-  <h2>Users</h2>
-<div class = "row">
-  <div class="col-lg-8">
+<div class="col-lg-8">
 <table class="table table-striped">
+<h2>Users</h2>
 <% @users.each do |user| %>
 <%= link_to user_path(user.id) do %>
 <%= image_tag user.get_profile_image(100,100) %>
@@ -20,5 +17,7 @@
 <%= user.introduction %>
 <% end %>
 </table>
+</div>
+
 </div>
 </div>

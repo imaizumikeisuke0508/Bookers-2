@@ -5,6 +5,10 @@
    <p><%= current_user.name %></p>
    <p>introduction</p>
    <p><%= current_user.introduction %></p>
-   <div>
-  <%= link_to 'edit', edit_user_path(current_user.id) %>
+ </table>
+  <div class="d-grid mx-auto">
+    <button class="btn btn-light btn-block" type="button">
+    <i class="fa-solid fa-user-pen"></i>
+    <%= link_to "", edit_user_path(current_user.id) %>
+    </button>
   </div>
