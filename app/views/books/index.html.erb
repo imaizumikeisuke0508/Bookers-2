@@ -1,15 +1,24 @@
 <div class="container">
   <div class="row">
+
   <div class="col-lg-4">
+  <table class="table table-bordered">
   <h2>User info</h2>
    <%= image_tag current_user.get_profile_image(100,100) %>
-   <p>name</p>
-   <p><%= current_user.name %></p>
-   <p>introduction</p>
-   <p><%= current_user.introduction %></p>
-   <div>
-  <%= link_to 'edit', edit_user_path(current_user.id) %>
-  </div>
+   <thead>
+   <tr>
+   <th scope="row">name</th>
+   <td><%= current_user.name %></td>
+   </tr>
+   </thead>
+   <th scope="row">introduction</th>
+   <td><%= current_user.introduction %></td>
+   </table>
+   <div class="d-grid mx-auto">
+   <button class="btn btn-light btn-block" type="button">
+   <i class="fa-solid fa-user-pen"></i>
+   <%= link_to 'edit', edit_user_path(current_user.id) %>
+   </div>
 
   <h2>New book</h2>
   <%= form_with model: Book.new do |f| %>
@@ -19,7 +28,7 @@
    </div>
   <p>Opinion</p>
    <div>
-   <%= f.text_area :body, size: "20" %>
+   <%= f.text_area :body %>
   </div>
   <div>
   <%= f.submit 'Create Book', class: "btn btn-info" %>
@@ -27,20 +36,27 @@
    <% end %>
   </div>
 
+<div class="col-lg-8">
+<table class="table table-bordered">
 <h2>Books</h2>
-<div class = "row">
-  <div class="col-lg-8">
-<table class="table table-striped">
-<% @books.each do |book| %>
+<thead>
+<tr>
+<th>Auther</th>
+<th>Title</th>
+<th>Opinion</th>
+</tr>
+</thead>
 
+<tbody>
+<% @books.each do |book| %>
+ <div class="row">
+ <td>
   <%= link_to user_path(book.user) do %>
   <%= image_tag book.user.get_profile_image(100,100) %>
   <% end %>
-
-  <p>Title</p>
-  <%= link_to book.title, book_path(book.id) %>
-  <p>Opinion</p>
-  <span><%= book.body %></span>
+  </td>
+  <td><%= link_to book.title, book_path(book.id) %></td>
+  <td><%= book.body %></td>
 <% end %>
 </table>
 </div>
