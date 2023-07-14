@@ -2,38 +2,10 @@
   <div class="row">
 
   <div class="col-lg-4">
-  <table class="table table-bordered">
-  <h2>User info</h2>
-   <%= image_tag current_user.get_profile_image(100,100) %>
-   <thead>
-   <tr>
-   <th scope="row">name</th>
-   <td><%= current_user.name %></td>
-   </tr>
-   </thead>
-   <th scope="row">introduction</th>
-   <td><%= current_user.introduction %></td>
-   </table>
-   <div class="d-grid mx-auto">
-   <button class="btn btn-light btn-block" type="button">
-   <i class="fa-solid fa-user-pen"></i>
-   <%= link_to 'edit', edit_user_path(current_user.id) %>
-   </div>
 
-  <h2>New book</h2>
-  <%= form_with model: Book.new do |f| %>
-  <p>Title</p>
-  <div class>
-   <%= f.text_field :title %>
-   </div>
-  <p>Opinion</p>
-   <div>
-   <%= f.text_area :body %>
-  </div>
-  <div>
-  <%= f.submit 'Create Book', class: "btn btn-info" %>
-  </div>
-   <% end %>
+   <%= render 'users/currentuser' %>
+   <%= render 'create' %>
+
   </div>
 
 <div class="col-lg-8">

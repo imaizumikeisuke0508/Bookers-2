@@ -1,0 +1,9 @@
+<table class="table table-striped">
+   <%= image_tag book.user.get_profile_image(100,100) %>
+   <p>name</p>
+   <p><%= book.user.name %></p>
+   <p>introduction</p>
+   <p><%= book.user.introduction %></p>
+   <div>
+  <%= link_to 'edit', edit_user_path(current_user.id) %>
+  </div>

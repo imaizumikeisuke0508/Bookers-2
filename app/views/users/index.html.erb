@@ -1,33 +1,13 @@
 <div class="container">
   <div class="row">
-   
+
   <div class="col-lg-4">
-  <table class=>
-  <h2>User info</h2>
-   <%= image_tag current_user.get_profile_image(100,100) %>
-   <p>name</p>
-   <p><%= current_user.name %></p>
-   <p>introduction</p>
-   <p><%= current_user.introduction %></p>
-   <div>
-  <%= link_to 'edit', edit_user_path(current_user.id) %>
+
+  <%= render 'currentuser' %>
+  <%= render 'books/create' %>
+
   </div>
 
-  <h2>New book</h2>
-  <%= form_with model: Book.new do |f| %>
-  <p>Title</p>
-  <div class>
-   <%= f.text_field :title %>
-   </div>
-  <p>Opinion</p>
-   <div>
-   <%= f.text_area :body, size: "20" %>
-  </div>
-  <div>
-  <%= f.submit 'Create Book', class: "btn btn-info" %>
-  </div>
-   <% end %>
-  </div>
   <h2>Users</h2>
 <div class = "row">
   <div class="col-lg-8">
