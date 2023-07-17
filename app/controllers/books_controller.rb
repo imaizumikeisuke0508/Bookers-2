@@ -11,11 +11,13 @@ before_action :is_matching_login_user, only: [:edit, :update]
      flash[:notice] = "You have created book successfully."
      redirect_to book_path(@book.id)
     else
-     render :books
+     @books = Book.all
+     render "books/index"
     end
   end
 
   def index
+    @book = Book.new
     @books = Book.all
   end
 
