@@ -45,6 +45,9 @@
          <% end %>
         </li>
        <% else %>
+       <%= link_to  "/", class: 'nav-link' do %>
+         <i class="fa-solid fa-house"></i> Home
+         <% end %>
         <li class = "nav-item">
          <%= link_to about_path, class: 'nav-link' do %>
          <i class="fa-solid fa-link"></i>About
