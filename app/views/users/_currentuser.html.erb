@@ -1,4 +1,4 @@
- <table class=>
+ <table class="table table-bordered">
   <h2>User info</h2>
    <%= image_tag current_user.get_profile_image(100,100) %>
    <p>name</p>
@@ -6,9 +6,8 @@
    <p>introduction</p>
    <p><%= current_user.introduction %></p>
  </table>
-  <div class="d-grid mx-auto">
+   <div class="d-grid mx-auto">
     <button class="btn btn-light btn-block" type="button">
-    <i class="fa-solid fa-user-pen"></i>
-    <%= link_to "", edit_user_path(current_user.id) %>
+    <%= link_to  "<i class='fas fa-user-cog'></i>".html_safe, edit_user_path(current_user.id) %>
     </button>
-  </div>
+    </div>

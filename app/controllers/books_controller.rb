@@ -12,7 +12,7 @@ before_action :is_matching_login_user, only: [:edit, :update]
      redirect_to book_path(@book.id)
     else
      @books = Book.all
-     render "books/index"
+     render :index
     end
   end
 

@@ -26,27 +26,27 @@
        <% if user_signed_in? %>
         <li class = "nav-item">
          <%= link_to  user_path(current_user.id), class: 'nav-link' do %>
-         <i class="fa-solid fa-house"></i> Home
+         <i class="fas fa-home"></i>Home
          <% end %>
         </li>
          <li class = "nav-item">
          <%= link_to users_path, class: 'nav-link' do %>
-         <i class="fa-solid fa-user"></i>Users
+         <i class="fa-solid fa-users"></i>Users
          <% end %>
         </li>
          <li class = "nav-item">
          <%= link_to books_path, class: 'nav-link' do %>
-         <i class="fa-solid fa-book"></i>Books
+         <i class="fa-solid fa-book-open"></i>Books
          <% end %>
         </li>
         <li class = "nav-item">
          <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
-         <i class="fa-solid fa-right-from-bracket"></i>Log out
+         <i class="fas fa-sign-out-alt"></i>Log out
          <% end %>
         </li>
        <% else %>
        <%= link_to  "/", class: 'nav-link' do %>
-         <i class="fa-solid fa-house"></i> Home
+        <i class="fas fa-home"></i>Home
          <% end %>
         <li class = "nav-item">
          <%= link_to about_path, class: 'nav-link' do %>
@@ -55,12 +55,12 @@
         </li>
         <li class = "nav-item">
          <%= link_to  new_user_registration_path, class: 'nav-link' do %>
-         <i class="fa-solid fa-person-circle-check"></i>Sign up
+         <i class="fa-solid fa-user-plus"></i>Sign up
          <% end %>
         </li>
         <li class = "nav-item">
          <%= link_to  new_user_session_path,  class: 'nav-link' do %>
-        <i class="fa-solid fa-right-to-bracket"></i>Log in
+        <i class="fas fa-sign-in-alt"></i>Log in
         <% end %>
         </li>
        <% end %>

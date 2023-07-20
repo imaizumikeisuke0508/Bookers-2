@@ -1,28 +1,24 @@
 <div class="container">
   <div class="row">
 
-  <div class="col-lg-4">
+  <div class="col-md-3">
   <%= render 'currentuser' %>
   <%= render 'books/create' %>
   </div>
 
-<div class="col-lg-8">
+<div class="col-md-8 offset-md-1">
 <table class="table table-bordered">
 <h2>Users</h2>
 <thead>
- <td>Name</td>
- <td>Introduction</td>
+ <td>image</td>
+ <td>name</td>
 </thead>
 <% @users.each do |user| %>
 <tbody>
- <div class="row">
- <td>
-<%= link_to user_path(user.id) do %>
-<%= image_tag user.get_profile_image(100,100) %>
-<%= user.name %>
-<% end %>
-</td>
-<td><%= user.introduction %></td>
+<div class="row">
+<td><%= image_tag user.get_profile_image(100,100) %></td>
+<td><%= user.name %></td>
+<td><%= link_to "Show", user_path(user.id) %></td>
 <% end %>
 </div>
 </tbody>

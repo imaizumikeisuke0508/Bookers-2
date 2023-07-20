@@ -5,7 +5,9 @@
    <p><%= book.user.name %></p>
    <p>introduction</p>
    <p><%= book.user.introduction %></p>
-   <div>
-  <%= link_to 'edit', edit_user_path(current_user.id) %>
-  </div>
+    <div class="d-grid mx-auto">
+    <button class="btn btn-light btn-block" type="button">
+    <%= link_to "<i class='fa-solid fa-user-cog'></i>".html_safe, edit_user_path(book.user.id) %>
+    </button>
+    </div>
  </table>

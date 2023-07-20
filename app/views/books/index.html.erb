@@ -1,20 +1,20 @@
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
+<div class="container">
+  <% if @book.errors.any? %>
+  <h3><%= @book.errors.count %> error prohibited this obj from being saved</h3>
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
 <% end %>
-<div class="container">
 <div class="row">
 
-<div class="col-lg-4">
+<div class="col-md-3">
    <%= render 'users/currentuser' %>
    <%= render 'create' %>
 </div>
 
-<div class="col-lg-8">
+<div class="col-md-8 offset-md-1 ">
 <table class="table table-bordered">
  <h2>Books</h2>
  <thead>
